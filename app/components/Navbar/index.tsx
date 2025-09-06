@@ -1,4 +1,4 @@
-import { auth, signIn, signOut } from "@/auth";
+import { auth, signOut } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -13,7 +13,6 @@ export const Navbar: React.FC = async () => {
         <Link href="/">
           <Image src="logo.svg" alt="logo" width={144} height={30} />
         </Link>
-        <SignInFrom />
         <div className="flex items-center gap-5 text-black">
           {session && session.user ? (
             <>
@@ -33,14 +32,7 @@ export const Navbar: React.FC = async () => {
               </Link>
             </>
           ) : (
-            <form
-              action={async () => {
-                "use server";
-                await signIn("github");
-              }}
-            >
-              <button type="submit">Login</button>
-            </form>
+            <SignInFrom />
           )}
         </div>
       </nav>
