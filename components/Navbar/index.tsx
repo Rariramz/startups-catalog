@@ -1,8 +1,8 @@
 import { auth, signOut } from "@/auth";
+import SignInFrom from "@/components/SignInFrom";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import SignInFrom from "../SignInFrom";
 
 export const Navbar: React.FC = async () => {
   const session = await auth();

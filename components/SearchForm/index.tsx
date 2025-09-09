@@ -1,6 +1,6 @@
+import { SearchFormResetBtn } from "@/components/SearchFormResetBtn";
 import { Search } from "lucide-react";
 import Form from "next/form";
-import { SearchFormResetBtn } from "../SearchFormResetBtn";
 
 export const SearchForm = ({ query }: { query?: string }) => {
   return (
