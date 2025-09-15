@@ -1,19 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { formatDate } from "@/lib/utils";
+import { Author, Startup } from "@/sanity/types";
 import { EyeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export type TStartupCard = {
-  _createdAt: string;
-  views: number;
-  author?: { _id: number; name: string };
-  _id: number;
-  desciption: string;
-  image: string;
-  category: string;
-  title: string;
-};
+export type TStartupCard = Omit<Startup, "author"> & { author?: Author };
 
 export const StartupCard = ({ post }: { post: TStartupCard }) => {
   const {
@@ -21,8 +13,8 @@ export const StartupCard = ({ post }: { post: TStartupCard }) => {
     views,
     author: { _id: authorId, name: authorName } = {},
     title,
-    category,
-    desciption,
+    category = "",
+    description,
     image,
     _id: postId,
   } = post;
@@ -55,7 +47,7 @@ export const StartupCard = ({ post }: { post: TStartupCard }) => {
         </Link>
       </div>
       <Link href={`/startup/${postId}`}>
-        <p className="startup-card_desc">{desciption}</p>
+        <p className="startup-card_desc">{description}</p>
         <img src={image} alt="placeholder" className="startup-card_img" />
       </Link>
       <div className="flex-between gap-3 mt-5">
