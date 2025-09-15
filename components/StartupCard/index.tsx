@@ -38,7 +38,7 @@ export const StartupCard = ({ post }: { post: TStartupCard }) => {
         </div>
         <Link href={`/user/${authorId}`}>
           <Image
-            src="https://placehold.co/600x400"
+            src="https://placehold.co/400x400"
             alt="placeholder"
             width={48}
             height={48}
