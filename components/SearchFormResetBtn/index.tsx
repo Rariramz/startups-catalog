@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { XIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -11,10 +12,10 @@ export const SearchFormResetBtn = () => {
   };
 
   return (
-    <button type="reset" onClick={reset}>
+    <Button type="reset" onClick={reset}>
       <Link href="/" className="search-btn text-white">
         <XIcon className="size-5" />
       </Link>
-    </button>
+    </Button>
   );
 };
